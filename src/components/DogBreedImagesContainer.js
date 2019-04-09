@@ -10,7 +10,7 @@ class DogsBreedImagesContainer extends Component {
     const breed = this.props.match.params.breed
 
     request
-      .get(`https://dog.ceo/api/breed/${encodeURIComponent(breed)}/images`)
+      .get(`https://dog.ceo/api/breed/${encodeURIComponent(breed)}/images/random/10`)
       .then(response => {
         const arrayOfImageUrls = response.body.message
         this.props.setDogsImages(arrayOfImageUrls)
