@@ -1,35 +1,43 @@
 import React, { Component } from 'react'
+import request from 'superagent'
+import { connect } from "react-redux"
 import DogsList from './DogsList'
-import { getDogsList } from '../actions/DogsListAction'
+import { setDogsList } from '../actions/DogsListAction'
 
-export default class DogsListContainer extends Component {
+class DogsListContainer extends Component {
     // state = { dogBreeds: null }
 
-    componentDidMount() {
-        this.props.getDogsList()
-        // request
-        //     .get('https://dog.ceo/api/breeds/list/all')
-        //     .then(response => {
-        //         const breeds = Object.keys(response.body.message)
-        //         this.updateBreeds(breeds)
-        //     })
-        //     .catch(console.error)
+    getDogsList = () => {
+
+        request
+            .get('https://dog.ceo/api/breeds/list/all')
+            .then(response => {
+                const breeds = Object.keys(response.body.message)
+                this.updateBreeds(breeds)
+            })
+            .catch(error => { console.log('ERROR!') })
     }
 
-    // updateBreeds(breeds) {
-    //     this.setState({
-    //         dogBreeds: breeds
-    //     })
-    // }
+    componentDidMount() {
+        this.getDogsList()
+    }
+
+    updateBreeds(breeds) {
+        this.props.dispatch(setDogsList(breeds))
+    }
 
     render() {
         const { dogsList } = this.props
         return (
-            { dogsList }
-            // <DogsList />)
-            // return <DogsList dogBreeds={this.state.dogBreeds} />
+            <div>
+                <DogsList dogslist={dogsList} />
+            </div>
         )
     }
 }
 
-//
+const mapStateToProps = state => {
+    return { dogsList: state.DogsListReducer.dogsList }
+}
+
+export default connect(mapStateToProps)(DogsListContainer);
