@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import DogsListContainer from './components/DogsListContainer';
 import { Route } from 'react-router-dom'
-import DogBreedImagesContainer from './components/DogBreedImages'
+import DogBreedImagesContainer from './components/DogBreedImagesContainer'
 
 class App extends Component {
   render() {
