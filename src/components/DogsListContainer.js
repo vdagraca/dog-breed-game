@@ -5,10 +5,8 @@ import DogsList from './DogsList'
 import { setDogsList } from '../actions/DogsListAction'
 
 class DogsListContainer extends Component {
-    // state = { dogBreeds: null }
-
+  
     getDogsList = () => {
-
         request
             .get('https://dog.ceo/api/breeds/list/all')
             .then(response => {
