@@ -10,7 +10,7 @@ class DogsBreedImagesContainer extends Component {
     const breed = this.props.match.params.breed
 
     request
-      .get(`https://dog.ceo/api/breed/${encodeURIComponent(breed)}/images/random/10`)
+      .get(`https://dog.ceo/api/breed/hound/${encodeURIComponent(breed)}/images/random/10`)
       .then(response => {
         const arrayOfImageUrls = response.body.message
         this.props.setDogsImages(arrayOfImageUrls)
@@ -23,18 +23,18 @@ class DogsBreedImagesContainer extends Component {
   }
 
 
-updateImages(images) {
-  this.props.dispatch(setDogsImages(images))
-}
+  updateImages(images) {
+    this.props.dispatch(setDogsImages(images))
+  }
 
-render() {
-  const { dogsImages } = this.props
-  return (
-      <div>
-          <DogBreedImages dogsimages={dogsImages} />
-      </div>
-  )
-}
+  render() {
+    const { dogsImages } = this.props
+    return (
+        <div>
+            <DogBreedImages dogsimages={dogsImages} />
+        </div>
+    )
+  }
 }
 
 const mapStateToProps = state => {
@@ -42,3 +42,4 @@ return { dogsImages: state.DogsImagesReducer.dogsImages }
 }
 
 export default connect(mapStateToProps, { setDogsImages })(DogsBreedImagesContainer);
+

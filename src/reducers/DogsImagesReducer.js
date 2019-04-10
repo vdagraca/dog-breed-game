@@ -9,7 +9,8 @@ const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case SET_DOGSIMAGES:
       return {
-        ...state, dogsImages: action.payload
+        ...state,
+        dogsImages: action.payload
       }
 
     default:
