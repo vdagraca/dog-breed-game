@@ -27,9 +27,9 @@ export function getDogsList(assignRandomValues = false) {
                     const randomBreed = breeds[randomIndex]
                     console.log("randomBreed test:", randomBreed)
 
-                    const randomBreedImageUrl =`https://dog.ceo/api/breed/${encodeURIComponent(randomBreeds)}/images/random`
-                    dispatch(setRandomBreed({ name: randomBreed, imageUrl: randomBreedImageUrl }))
-                    }
+                    // const randomBreedImageUrl =`https://dog.ceo/api/breed/${encodeURIComponent(randomBreeds)}/images/random`
+                    // dispatch(setRandomBreed({ name: randomBreed, imageUrl: randomBreedImageUrl }))
+                }
             })
             .catch(error => {console.error('Error')})
     }
