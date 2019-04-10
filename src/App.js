@@ -5,7 +5,7 @@ import { Route } from 'react-router-dom'
 import DogBreedImagesContainer from './components/DogBreedImagesContainer'
 import Home from './navigation/Home'
 import NavBar from './navigation/NavBar'
-// import RandomDogImageGameContainer from './components/DogBreedImagesContainer'
+import RandomDogImageGameContainer from './components/RandomDogImageGameContainer'
 
 
 
@@ -17,8 +17,8 @@ class App extends Component {
           <NavBar />
           <Route exact path="/" component={Home} />
           <Route path="/dog-list" component={DogsListContainer} />
+          <Route path="/dog-game-1" component={RandomDogImageGameContainer} />
           <Route path="/dog-breeds/:breed" component={DogBreedImagesContainer} />
-          {/* <Route path="/dog-game-1" component={RandomDogImageGameContainer} /> */}
 
         </div>
 
