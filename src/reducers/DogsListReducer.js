@@ -5,8 +5,9 @@ const initialState = {
 }
 
 const reducer = (state = initialState, action = {}) => {
+  // console.log("STATE", state, "ACTION", action.payload)
   switch (action.type) {
-    case "SET_DOGSLIST":
+    case SET_DOGSLIST:
       return { ...state, dogsList: action.payload }
     default:
       return state
