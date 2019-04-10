@@ -8,7 +8,6 @@ import NavBar from './navigation/NavBar'
 import RandomDogImageGameContainer from './components/RandomDogImageGameContainer'
 
 
-
 class App extends Component {
   render() {
     return (
@@ -19,7 +18,6 @@ class App extends Component {
           <Route path="/dog-list" component={DogsListContainer} />
           <Route path="/dog-game-1" component={RandomDogImageGameContainer} />
           <Route path="/dog-breeds/:breed" component={DogBreedImagesContainer} />
-
         </div>
 
       </div>
