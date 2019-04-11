@@ -1,6 +1,6 @@
 
-export function shuffle(arra1) {
-    let ctr = arra1.length;
+export function shuffle(array) {
+    let ctr = array.length;
     let temp;
     let index;
 
@@ -11,14 +11,11 @@ export function shuffle(arra1) {
         // Decrease ctr by 1
         ctr--;
         // And swap the last element with it
-        temp = arra1[ctr];
-        arra1[ctr] = arra1[index];
-        arra1[index] = temp;
+        temp = array[ctr];
+        array[ctr] = array[index];
+        array[index] = temp;
     }
-    return arra1;
+    return array;
 }
 
-dispatch(shuffle(array))
-
-const myArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-console.log(shuffle(myArray));
+dispatch(shuffle)

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import request from 'superagent'
 import { connect } from "react-redux"
 import DogsList from './DogsList'
 import { getDogsList } from '../actions/DogsListAction'
