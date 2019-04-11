@@ -1,0 +1,21 @@
+.NavBar{
+    text-align: center;
+    width: 100%;
+    text-decoration: none;
+    padding: 15px;
+    background-color: #9ED5CE;
+} 
+
+.list-items {
+  display: inline;
+  color: black;
+  margin: 20px;
+  text-decoration: none;
+}
+
+.list-items a:hover {
+    background-color: azure;
+
+ 
+   
+}
