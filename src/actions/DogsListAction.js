@@ -3,7 +3,8 @@ import request from 'superagent'
 export const SET_DOGSLIST = 'SET_DOGSLIST'
 export const SET_CURRENTDOG = 'SET_CURRENTDOG'
 export const TWO_RANDOMDOGS = 'TWO_RANDOMDOGS'
-
+export const CLEAN_DATA = 'CLEAN_DATA'
+export const GET_DOGS_LIST = 'GET_DOGS_LIST'
 
 export const setDogsList = (dogslist) => {
     return {
@@ -29,6 +30,13 @@ export const twoRandomDogs = (data) => {
             one: data.one,
             two: data.two
         }
+    }
+}
+
+
+export const cleanData = () => {
+    return {
+        type: CLEAN_DATA
     }
 }
 
