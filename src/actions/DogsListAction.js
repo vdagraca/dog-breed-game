@@ -2,6 +2,8 @@ import request from 'superagent'
 
 export const SET_DOGSLIST = 'SET_DOGSLIST'
 export const SET_CURRENTDOG = 'SET_CURRENTDOG'
+export const TWO_RANDOMDOGS = 'TWO_RANDOMDOGS'
+
 
 export const setDogsList = (dogslist) => {
     return {
@@ -10,12 +12,22 @@ export const setDogsList = (dogslist) => {
     }
 }
 
-export const setCurrentDog = (data)=> {
+export const setCurrentDog = (data) => {
     return {
         type: SET_CURRENTDOG,
         payload: {
             name: data.name,
             imageUrl: data.imageUrl
+        }
+    }
+}
+
+export const twoRandomDogs = (data) => {
+    return {
+        type: TWO_RANDOMDOGS,
+        payload: {
+            one: data.one,
+            two: data.two
         }
     }
 }
@@ -38,17 +50,23 @@ export function getDogsList(assignRandomValues = false) {
                     console.log('randomIndex test:', randomIndex)
                     const randomBreed = breeds[randomIndex]
                     console.log("randomBreed test:", randomBreed)
+                    const randomIndex2 = Math.floor(Math.random() * breeds.length)
+                    const randomBreed2 = breeds[randomIndex2]
+                    const randomIndex3 = Math.floor(Math.random() * breeds.length)
+                    const randomBreed3 = breeds[randomIndex3]
 
-                    const randomBreedImageUrl =`https://dog.ceo/api/breed/${encodeURIComponent(randomBreed)}/images/random`
-                    request.get(randomBreedImageUrl).then(response =>
-                        {
-                            const imageUrl = response.body.message 
-                            console.log(imageUrl)
-                            dispatch(setCurrentDog({ name: randomBreed, imageUrl: imageUrl }))
-                        }
-                        )
+
+                    const randomBreedImageUrl = `https://dog.ceo/api/breed/${encodeURIComponent(randomBreed)}/images/random`
+                    request.get(randomBreedImageUrl).then(response => {
+                        const imageUrl = response.body.message
+                        console.log(imageUrl)
+                        dispatch(setCurrentDog({ name: randomBreed, imageUrl: imageUrl }))
+
+                        dispatch(twoRandomDogs({ one: randomBreed2, two: randomBreed3 }))
+                    }
+                    )
                 }
             })
-            .catch(error => {console.error('Error')})
+            .catch(error => { console.error('Error') })
     }
 }

@@ -15,6 +15,11 @@ export class RandomDogImageGame extends Component {
         console.log('this.props test:', this.props)
         const randomImage = this.props.currentDog.imageUrl
         const randomName = this.props.currentDog.name
+        const randomAnswerOne = this.props.randomDogOne
+        console.log('randomanswerone', randomAnswerOne)
+        const randomAnswerTwo = this.props.randomDogTwo
+        console.log('randomanswertwo:', randomAnswerTwo)
+
         const list = this.props.dogslist
 
         console.log('randomImage:', randomImage)
@@ -25,8 +30,8 @@ export class RandomDogImageGame extends Component {
                 <img src={randomImage} alt='dog2' /><br></br>
 
                 <button>{randomName}</button>
-                <button>Answer2</button>
-                <button>Answer3</button>
+                <button>{randomAnswerOne}</button>
+                <button>{randomAnswerTwo}</button>
 
                 {list}
             </div>
@@ -39,7 +44,9 @@ const mapStateToProps = (state) => {
 
     return {
         image: state.dogimage,
-        currentDog: state.DogsImagesReducer.currentDog
+        currentDog: state.DogsImagesReducer.currentDog,
+        randomDogOne: state.DogsImagesReducer.twoRandomDogs.one,
+        randomDogTwo: state.DogsImagesReducer.twoRandomDogs.two
     }
 }
 

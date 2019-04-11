@@ -1,12 +1,14 @@
-import { SET_DOGSIMAGES, SET_CURRENTDOG } from '../actions/DogsImagesAction'
+import { TWO_RANDOMDOGS } from '../actions/DogsListAction'
+import { SET_CURRENTDOG, SET_DOGSIMAGES } from '../actions/DogsImagesAction'
 
 const initialState = {
   dogsImages: [],
   currentDog: {},
+  twoRandomDogs: {}
 }
 
 const reducer = (state = initialState, action = {}) => {
-  //   console.log("STATE", state, "ACTION", action.payload)
+  console.log("STATE", state, "ACTION", action.payload)
   switch (action.type) {
     case SET_DOGSIMAGES:
       return {
@@ -17,6 +19,12 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         currentDog: action.payload
+      }
+    case TWO_RANDOMDOGS:
+      return {
+        ...state,
+        twoRandomDogs: action.payload
+
       }
 
     default:
