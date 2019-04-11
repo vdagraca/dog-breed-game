@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { getDogsList}  from '../actions/DogsListAction'
+import { getDogsList } from '../actions/DogsListAction'
 import { connect } from 'react-redux'
 
 
@@ -14,6 +14,7 @@ export class RandomDogImageGame extends Component {
     render() {
         console.log('this.props test:', this.props)
         const randomImage = this.props.currentDog.imageUrl
+        const randomName = this.props.currentDog.name
         const list = this.props.dogslist
 
         console.log('randomImage:', randomImage)
@@ -21,9 +22,11 @@ export class RandomDogImageGame extends Component {
             <div>
                 <h1>Random Dog Image Game</h1>
 
-                <img src={randomImage} alt='dog2' />
+                <img src={randomImage} alt='dog2' /><br></br>
 
-                {randomImage}
+                <button>{randomName}</button>
+                <button>Answer2</button>
+                <button>Answer3</button>
 
                 {list}
             </div>
