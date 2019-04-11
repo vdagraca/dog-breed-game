@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import './DogBreedImages.css'
 
 export default class DogBreedImages extends Component {
    
@@ -7,12 +8,12 @@ export default class DogBreedImages extends Component {
     const {dogsimages}=this.props
     return (
     <div className="dog-breed-images">
-      <h1>Dogs Breed Images</h1>
+      <h1>Breed gallery</h1>
      
 
       <div>
       { !dogsimages && 'Loading...' }
-        { dogsimages && dogsimages.map(url => <img src={ url } alt="Dog1" />) }
+        { dogsimages && dogsimages.map(url => <img className="images" src={ url } alt="Dog1" />) }
         {console.log("check")}
     </div>
 
