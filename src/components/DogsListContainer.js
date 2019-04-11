@@ -4,6 +4,7 @@ import { connect } from "react-redux"
 import DogsList from './DogsList'
 import { getDogsList } from '../actions/DogsListAction'
 
+
 class DogsListContainer extends Component {
     componentDidMount() {
         this.props.getDogsList()

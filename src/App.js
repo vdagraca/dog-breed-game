@@ -7,6 +7,8 @@ import Home from './navigation/Home'
 import NavBar from './navigation/NavBar'
 import RandomDogImageGameContainer from './components/RandomDogImageGameContainer'
 import DogQuestionContainer  from './components/DogQuestionContainer';
+import GameContainer from './components/GameContainer';
+import EndGame from './components/EndGame';
 
 
 class App extends Component {
@@ -20,6 +22,8 @@ class App extends Component {
           <Route path="/dog-game-1" component={RandomDogImageGameContainer} />
           <Route path="/dog-game-2" component={DogQuestionContainer} />
           <Route path="/dog-breeds/:breed" component={DogBreedImagesContainer} />
+          <Route exact path="/game" component={GameContainer} />
+          <Route exact path="/end" component={EndGame} />
         </div>
 
       </div>

@@ -1,15 +1,15 @@
-import React, { Component } from 'react'
-import RandomDogImageGame from './RandomDogImageGame'
+import * as React from 'react'
 import ModeContainer from './ModeContainer';
 import ScoreContainer from './ScoreContainer';
 import { Prompt } from 'react-router'
 import { Link } from "react-router-dom"
 
-class RandomDogImageGameContainer extends Component {
+
+export default class GameContainer extends React.Component {
+
     render() {
         return (
             <div className='gameContainer'>Guess the breed
-                <RandomDogImageGame />
                 <ModeContainer />
                 <ScoreContainer />
                 <Link to={'/end'}><button className='endBtn'>End the game</button></Link>
@@ -19,6 +19,3 @@ class RandomDogImageGameContainer extends Component {
         )
     }
 }
-
-
-export default RandomDogImageGameContainer
