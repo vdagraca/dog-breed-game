@@ -23,8 +23,10 @@ class DogQuestionContainer extends Component {
 const mapStateToProps = (state) => {
     console.log('state test 2:', state)
 
+    
+
     return {
-        dogslist: state.DogsListReducer.dogsList
+        dogsList: state.DogsListReducer.dogsList
     }
 }
 

@@ -13,6 +13,7 @@ export class DogQuestion extends Component {
     }
 
     componentDidMount() {
+      console.log('props test:', this.props)
       const {dogsList} = this.props
       console.log('dogslist test:',dogsList)
       const randomNumber1 = Math.random() * dogsList.length

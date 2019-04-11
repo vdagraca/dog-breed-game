@@ -1,6 +1,7 @@
 import request from 'superagent'
 
 export const SET_DOGSLIST = 'SET_DOGSLIST'
+export const SET_CURRENTDOG = 'SET_CURRENTDOG'
 
 export const setDogsList = (dogslist) => {
     return {
@@ -8,6 +9,17 @@ export const setDogsList = (dogslist) => {
         payload: dogslist
     }
 }
+
+export const setCurrentDog = (data)=> {
+    return {
+        type: SET_CURRENTDOG,
+        payload: {
+            name: data.name,
+            imageUrl: data.imageUrl
+        }
+    }
+}
+
 
 export function getDogsList(assignRandomValues = false) {
     // console.log('random image action')
@@ -27,8 +39,14 @@ export function getDogsList(assignRandomValues = false) {
                     const randomBreed = breeds[randomIndex]
                     console.log("randomBreed test:", randomBreed)
 
-                    // const randomBreedImageUrl =`https://dog.ceo/api/breed/${encodeURIComponent(randomBreeds)}/images/random`
-                    // dispatch(setRandomBreed({ name: randomBreed, imageUrl: randomBreedImageUrl }))
+                    const randomBreedImageUrl =`https://dog.ceo/api/breed/${encodeURIComponent(randomBreed)}/images/random`
+                    request.get(randomBreedImageUrl).then(response =>
+                        {
+                            const imageUrl = response.body.message 
+                            console.log(imageUrl)
+                            dispatch(setCurrentDog({ name: randomBreed, imageUrl: imageUrl }))
+                        }
+                        )
                 }
             })
             .catch(error => {console.error('Error')})

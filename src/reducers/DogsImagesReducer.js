@@ -1,7 +1,8 @@
-import { SET_DOGSIMAGES } from '../actions/DogsImagesAction'
+import { SET_DOGSIMAGES, SET_CURRENTDOG } from '../actions/DogsImagesAction'
 
 const initialState = {
-  dogsImages: []
+  dogsImages: [],
+  currentDog: {},
 }
 
 const reducer = (state = initialState, action = {}) => {
@@ -12,6 +13,11 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         dogsImages: action.payload
       }
+    case SET_CURRENTDOG:
+      return {
+        ...state,
+        currentDog: action.payload
+      }
 
     default:
       return state
@@ -21,3 +27,4 @@ const reducer = (state = initialState, action = {}) => {
 
 
 export default reducer
+

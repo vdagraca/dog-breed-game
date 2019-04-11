@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { fetchRandomImage } from '../actions/FetchRandomImageAction'
+import { getDogsList}  from '../actions/DogsListAction'
 import { connect } from 'react-redux'
 
 
@@ -8,12 +8,12 @@ export class RandomDogImageGame extends Component {
     componentDidMount() {
         console.log('RandomDogImageGame componentDidMount test!')
         console.log('this.props test:', this.props)
-        this.props.fetchRandomImage()
+        this.props.getDogsList(true)
     }
 
     render() {
         console.log('this.props test:', this.props)
-        const randomImage = this.props.image
+        const randomImage = this.props.currentDog.imageUrl
         const list = this.props.dogslist
 
         console.log('randomImage:', randomImage)
@@ -36,8 +36,8 @@ const mapStateToProps = (state) => {
 
     return {
         image: state.dogimage,
-        dogslist: state.DogsListReducer.dogsList
+        currentDog: state.DogsImagesReducer.currentDog
     }
 }
 
-export default connect(mapStateToProps, { fetchRandomImage })(RandomDogImageGame)
+export default connect(mapStateToProps, { getDogsList })(RandomDogImageGame)
