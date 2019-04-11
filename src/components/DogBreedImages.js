@@ -12,7 +12,7 @@ export default class DogBreedImages extends Component {
 
       <div>
       { !dogsimages && 'Loading...' }
-        { dogsimages && dogsimages.map(url => <img src={ url } alt="Dog" />) }
+        { dogsimages && dogsimages.map(url => <img src={ url } alt="Dog1" />) }
         {console.log("check")}
     </div>
 
