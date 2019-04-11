@@ -128,19 +128,23 @@ export class RandomDogImageGame extends Component {
         console.log('shuffledarray', shuffledArray)
         const list = this.props.dogslist
 
-        function buttonClickedone() {
+        const buttonClickedone = () => {
             if (shuffledArray[0] === correctAnswer) {
-                return alert('Congratulations!!')
+                alert('Congratulations!!')
+                this.props.getDogsList(true)
+                console.log("test", this.props.getDogsList())
             } else { return alert('Wrong, try again!') }
         }
-        function buttonClickedtwo() {
+        const buttonClickedtwo = () => {
             if (shuffledArray[1] === correctAnswer) {
-                return alert('Congratulations!!')
+                alert('Congratulations!!')
+                this.props.getDogsList(true)
             } else { return alert('Wrong, try again!') }
         }
-        function buttonClickedthree() {
+        const buttonClickedthree = () => {
             if (shuffledArray[2] === correctAnswer) {
-                return alert('Congratulations!!')
+                alert('Congratulations!!')
+                this.props.getDogsList(true)
             } else { return alert('Wrong, try again!') }
         }
 
