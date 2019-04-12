@@ -19,13 +19,9 @@ export class RandomDogImageGame extends Component {
         let temp;
         let index;
 
-        // While there are elements in the array
         while (ctr > 0) {
-            // Pick a random index
             index = Math.floor(Math.random() * ctr);
-            // Decrease ctr by 1
             ctr--;
-            // And swap the last element with it
             temp = array[ctr];
             array[ctr] = array[index];
             array[index] = temp;
@@ -96,6 +92,17 @@ export class RandomDogImageGame extends Component {
         }
     }
 
+    handleClick(breed) {
+        if (breed === this.props.currentDog.name) {
+            alert('Correct!!!')
+            this.props.getDogsList(true)
+        } else {
+            alert(`Wrong,the right anwer is ${this.props.currentDog.name}!`)
+            this.props.getDogsList(true)
+        }
+
+    }
+
     render() {
         // console.log('this.score test:', this.props.score)
         const randomImage = this.props.currentDog.imageUrl
@@ -108,18 +115,9 @@ export class RandomDogImageGame extends Component {
         // console.log('shuffledarray', shuffledArray)
         const list = this.props.dogslist
 
-
-        // function buttonClicked(array) {
-        //     for (let i = 0; i < 3; i++) {
-        //         if (array[i] === correctAnswer) {
-        //             return alert('you win')
-        //         } if (array[1] !== correctAnswer) { return alert('you loose') }
-        //     }
-        // }
-
         return (
-            <div>
-                <h1>Random Dog Image Game</h1>
+            <div className="game-div">
+                <h2>Dog Quiz</h2>
 
                 <p>Your score: {Math.round(totalScore)}%</p>
                 <p>Total questions: {totalQuestions}</p>
@@ -131,7 +129,11 @@ export class RandomDogImageGame extends Component {
                 <button onClick={() => this.buttonClickedtwo(shuffledArray, correctAnswer)}>{shuffledArray[1]}</button>
                 <button onClick={() => this.buttonClickedthree(shuffledArray, correctAnswer)}>{shuffledArray[2]}</button>
 
-                {list}
+                <img className="dogs-image" src={randomImage} alt='dog2' /><br></br>
+
+                <button  onClick={() => this.handleClick(shuffledArray[0])}>{shuffledArray[0]}</button>
+                <button  onClick={() => this.handleClick(shuffledArray[1])}>{shuffledArray[1]}</button>
+                <button  onClick={() => this.handleClick(shuffledArray[2])}>{shuffledArray[2]}</button>
             </div>
         )
     }
