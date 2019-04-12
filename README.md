@@ -1,3 +1,10 @@
+#Dog Game Project by Vivian, Carolina & Angela
+
+We created a simple app, which has a Dogs list, that shows 10 photos of each breed so you can learn the breeds and memorize them before starting our Dog Game(Dog Game 1).
+The game itself consists of a breed photo and 3 possible answers. A click on the correct answer will redirect you to the next question, whereas a click on the wrong answer will show you the correct one and move to the next one. 
+You can always check your stats and when you know your breeds simply click end game and see how good you did!
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
