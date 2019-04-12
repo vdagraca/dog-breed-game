@@ -43,10 +43,11 @@ export class RandomDogImageGame extends Component {
         }
         return 0
     }
-
+ 
     buttonClickedone = (shuffledArray, correctAnswer) => {
         if (shuffledArray[0] === correctAnswer) {
-            alert('Congratulations!!')
+            alert('Congratulations!!') 
+            
             this.props.getDogsList(true)
             store.dispatch(setScore(this.calculatePercentage(true)))
             store.dispatch(handleCorrect("dog"))
@@ -93,16 +94,17 @@ export class RandomDogImageGame extends Component {
         }
     }
 
-    handleClick(breed) {
-        if (breed === this.props.currentDog.name) {
-            alert('Correct!!!')
-            this.props.getDogsList(true)
-        } else {
-            alert(`Wrong,the right anwer is ${this.props.currentDog.name}!`)
-            this.props.getDogsList(true)
-        }
+    // handleClick(breed) {
+    //     if (breed === this.props.currentDog.name) {
+    //         alert('Correct!!!')
+            
+    //         this.props.getDogsList(true)
+    //     } else {
+    //         alert(`Wrong,the right anwer is ${this.props.currentDog.name}!`)
+    //         this.props.getDogsList(true)
+    //     }
 
-    }
+    // }
 
     render() {
         // console.log('this.score test:', this.props.score)
@@ -119,22 +121,18 @@ export class RandomDogImageGame extends Component {
         return (
             <div className="game-div">
                 <h2>Dog Quiz</h2>
-
-                <p>Your score: {Math.round(totalScore)}%</p>
-                <p>Total questions: {totalQuestions}</p>
-                <p>Total correct answers: {correctAnswers}</p>
-
-                {/* <img src={randomImage} alt='dog2' /><br></br> */}
+                <div >
+                <p className="scoreboard-div">Your score: {Math.round(totalScore)}%</p>
+                <p className="scoreboard-div">Total questions: {totalQuestions}</p>
+                <p className="scoreboard-div">Total correct answers: {correctAnswers}</p>
                 <img className="dogs-image" src={randomImage} alt='dog2' /><br></br>
+                </div>
+            
+                
                 <button onClick={() => this.buttonClickedone(shuffledArray, correctAnswer)}>{shuffledArray[0]}</button>
                 <button onClick={() => this.buttonClickedtwo(shuffledArray, correctAnswer)}>{shuffledArray[1]}</button>
                 <button onClick={() => this.buttonClickedthree(shuffledArray, correctAnswer)}>{shuffledArray[2]}</button>
 
-                
-
-                {/* <button  onClick={() => this.handleClick(shuffledArray[0])}>{shuffledArray[0]}</button>
-                <button  onClick={() => this.handleClick(shuffledArray[1])}>{shuffledArray[1]}</button>
-                <button  onClick={() => this.handleClick(shuffledArray[2])}>{shuffledArray[2]}</button> */}
             </div>
         )
     }

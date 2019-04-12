@@ -69,10 +69,12 @@ export class DogQuestion extends Component {
 
     return (
       <div>
-        <span>Which dog breed is it {this.state.breed}?</span>
-        <img onClick={() => { }} src={this.state.image1} />
-        <img onClick={() => { }} src={this.state.image2} />
-        <img onClick={() => { }} src={this.state.image3} />
+        <span>Which dog breed is it ?</span>
+        <div>
+        <img  src={this.state.image1} />
+        <img  src={this.state.image2} />
+        <img  src={this.state.image3} />
+      </div>
       </div>
     )
   }

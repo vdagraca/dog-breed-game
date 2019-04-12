@@ -12,10 +12,20 @@ button {
     border-radius: 8px;
   }
 
-  body {
-
-  }
-
+  .scoreboard-div {
+    display: block;
+    text-align: left;
+    font-size: 15px;
+    padding: 13px;
+    margin: 0px;
+    margin-left:15px;
+    background-color: white;
+    width: 200px;
+}
+/* 
+p{
+  width: 200px;
+} */
 
   .game-div {
       margin-bottom: 40px;
@@ -23,4 +33,5 @@ button {
 
   .dogs-image{
       max-width: 250px;
+      margin-top: 0px;
   }
