@@ -1,10 +1,8 @@
-const initialState = { breeds: [], correctAnswer: {}, breedMode: '' }
+const initialState = { breeds: [] }
 
 export default (state = initialState, action = {}) => {
   switch (action.type) {
-    case "GET_DOGS_LIST": {
-      return { ...state }
-    }
+
     case 'CLEAN_DATA': {
       return { ...state, breeds: [] }
     }

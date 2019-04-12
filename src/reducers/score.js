@@ -1,4 +1,4 @@
-const initialState = { totalScore: 0, streakCounter: 10, totalQuestions: 0, thingy: [], correctAnswers: 0, level: 1 }
+const initialState = { totalScore: 0, totalQuestions: 0, thingy: [], correctAnswers: 0 }
 
 export default (state = initialState, action = {}) => {
   switch (action.type) {
@@ -9,7 +9,6 @@ export default (state = initialState, action = {}) => {
       return (
         {
           ...state,
-          streakCounter: state.streakCounter - 1,
           totalQuestions: state.totalQuestions + 1,
           correctAnswers: state.correctAnswers + 1,
           thingy: state.thingy.concat(action.payload.name)
@@ -20,23 +19,12 @@ export default (state = initialState, action = {}) => {
       return (
         {
           ...state,
-          streakCounter: 10,
           totalQuestions: state.totalQuestions + 1,
           thingy: state.thingy.concat(action.payload.name)
         }
       )
     }
-    case "RESET_STREAK": {
-      return (
-        {
-          ...state,
-          streakCounter: 10,
-        }
-      )
-    }
-    case "LEVEL_SELECT": {
-      return { ...state, level: action.payload }
-    }
+
     case "CLEAN_STATS": {
       return initialState
     }

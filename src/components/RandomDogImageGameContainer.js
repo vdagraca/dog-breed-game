@@ -8,13 +8,6 @@ import { Link } from "react-router-dom"
 
 class RandomDogImageGameContainer extends Component {
 
-
-
-    // levelUp = (num) => {
-    //     store.dispatch(resetStreak())
-    //     store.dispatch(levelSelect(num))
-    // }
-
     render() {
 
         return (
@@ -27,7 +20,5 @@ class RandomDogImageGameContainer extends Component {
     }
 
 }
-
-
 
 export default RandomDogImageGameContainer

@@ -9,8 +9,8 @@ export class RandomDogImageGame extends Component {
 
 
     componentDidMount() {
-        console.log('RandomDogImageGame componentDidMount test!')
-        console.log('this.props test:', this.props)
+        // console.log('RandomDogImageGame componentDidMount test!')
+        // console.log('this.props test:', this.props)
         this.props.getDogsList(true)
     }
 
@@ -40,7 +40,7 @@ export class RandomDogImageGame extends Component {
         }
         totalQuestions++
 
-        console.log("propsscore", this.props.score)
+        // console.log("propsscore", this.props.score)
         if (totalQuestions > 0) {
             return (correctAnswers / totalQuestions) * 100
         }
@@ -97,18 +97,16 @@ export class RandomDogImageGame extends Component {
     }
 
     render() {
-        console.log('this.score test:', this.props.score)
+        // console.log('this.score test:', this.props.score)
         const randomImage = this.props.currentDog.imageUrl
         const correctAnswer = this.props.currentDog.name
         const randomAnswerOne = this.props.randomDogOne
         const randomAnswerTwo = this.props.randomDogTwo
         const answerArray = [correctAnswer, randomAnswerOne, randomAnswerTwo]
-        const { correctAnswers, totalQuestions, streakCounter, totalScore, level } = this.props.score
+        const { correctAnswers, totalQuestions, totalScore } = this.props.score
         const shuffledArray = this.shuffle(answerArray)
-        console.log('shuffledarray', shuffledArray)
+        // console.log('shuffledarray', shuffledArray)
         const list = this.props.dogslist
-
-
 
 
         // function buttonClicked(array) {
@@ -129,7 +127,6 @@ export class RandomDogImageGame extends Component {
 
                 <img src={randomImage} alt='dog2' /><br></br>
 
-
                 <button onClick={() => this.buttonClickedone(shuffledArray, correctAnswer)}>{shuffledArray[0]}</button>
                 <button onClick={() => this.buttonClickedtwo(shuffledArray, correctAnswer)}>{shuffledArray[1]}</button>
                 <button onClick={() => this.buttonClickedthree(shuffledArray, correctAnswer)}>{shuffledArray[2]}</button>
@@ -142,7 +139,7 @@ export class RandomDogImageGame extends Component {
 
 
 const mapStateToProps = (state) => {
-    console.log('state test:', state)
+    // console.log('state test:', state)
 
     return {
         image: state.dogimage,
