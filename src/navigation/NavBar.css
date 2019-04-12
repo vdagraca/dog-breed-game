@@ -10,12 +10,9 @@
   display: inline;
   color: black;
   margin: 20px;
-  text-decoration: none;
+  text-decoration: none; 
 }
 
 .list-items a:hover {
-    background-color: azure;
-
- 
-   
+    background-color: azure;  
 }

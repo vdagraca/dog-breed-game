@@ -4,9 +4,9 @@ import './DogsList.css'
 
 export default class DogsList extends Component {
     renderDogBreed(breed) {
-        return      <li className="dogslist" key={breed}>
+        return      <li  className="dogslist" key={breed}>
         <Link className="dogs-list" to={ `/dog-breeds/${breed}` }>{breed}</Link>
-      </li>
+        </li> 
      
       }
 
@@ -16,7 +16,7 @@ export default class DogsList extends Component {
             <div>
                 <h2> Dog breeds list</h2>
                 <p>Each breed will display 10 photos! Know your breeds before you test yourself in the Quiz!</p>
-                <ul >
+                <ul  className="limheight">
                     
                         { dogslist.map(this.renderDogBreed) }
                 

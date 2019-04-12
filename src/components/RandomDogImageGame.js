@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { getDogsList } from '../actions/DogsListAction'
 import { connect } from 'react-redux'
+import './RandomDogImageGame.css'
 
 export class RandomDogImageGame extends Component {
 
@@ -27,7 +28,7 @@ export class RandomDogImageGame extends Component {
 
     handleClick(breed) {
         if (breed === this.props.currentDog.name) {
-            alert('Congratulations!!')
+            alert('Correct!!!')
             this.props.getDogsList(true)
         } else {
             alert(`Wrong,the right anwer is ${this.props.currentDog.name}!`)
@@ -35,6 +36,7 @@ export class RandomDogImageGame extends Component {
         }
 
     }
+
 
     render() {
         console.log('this.props test:', this.props)
@@ -49,14 +51,14 @@ export class RandomDogImageGame extends Component {
         const list = this.props.dogslist
 
         return (
-            <div>
-                <h1>Random Dog Image Game</h1>
+            <div className="game-div">
+                <h2>Dog Quiz</h2>
 
-                <img src={randomImage} alt='dog2' /><br></br>
+                <img className="dogs-image" src={randomImage} alt='dog2' /><br></br>
 
-                <button onClick={() => this.handleClick(shuffledArray[0])}>{shuffledArray[0]}</button>
-                <button onClick={() => this.handleClick(shuffledArray[1])}>{shuffledArray[1]}</button>
-                <button onClick={() => this.handleClick(shuffledArray[2])}>{shuffledArray[2]}</button>
+                <button  onClick={() => this.handleClick(shuffledArray[0])}>{shuffledArray[0]}</button>
+                <button  onClick={() => this.handleClick(shuffledArray[1])}>{shuffledArray[1]}</button>
+                <button  onClick={() => this.handleClick(shuffledArray[2])}>{shuffledArray[2]}</button>
 
             </div>
         )
