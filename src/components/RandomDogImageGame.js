@@ -4,6 +4,7 @@ import { getDogsList } from '../actions/DogsListAction'
 import { handleCorrect, handleWrong } from '../actions/ScoreAction';
 import { setScore } from '../actions/ScoreAction';
 import store from '../store'
+import './RandomDogImageGame.css'
 
 export class RandomDogImageGame extends Component {
 
@@ -123,17 +124,17 @@ export class RandomDogImageGame extends Component {
                 <p>Total questions: {totalQuestions}</p>
                 <p>Total correct answers: {correctAnswers}</p>
 
-                <img src={randomImage} alt='dog2' /><br></br>
-
+                {/* <img src={randomImage} alt='dog2' /><br></br> */}
+                <img className="dogs-image" src={randomImage} alt='dog2' /><br></br>
                 <button onClick={() => this.buttonClickedone(shuffledArray, correctAnswer)}>{shuffledArray[0]}</button>
                 <button onClick={() => this.buttonClickedtwo(shuffledArray, correctAnswer)}>{shuffledArray[1]}</button>
                 <button onClick={() => this.buttonClickedthree(shuffledArray, correctAnswer)}>{shuffledArray[2]}</button>
 
-                <img className="dogs-image" src={randomImage} alt='dog2' /><br></br>
+                
 
-                <button  onClick={() => this.handleClick(shuffledArray[0])}>{shuffledArray[0]}</button>
+                {/* <button  onClick={() => this.handleClick(shuffledArray[0])}>{shuffledArray[0]}</button>
                 <button  onClick={() => this.handleClick(shuffledArray[1])}>{shuffledArray[1]}</button>
-                <button  onClick={() => this.handleClick(shuffledArray[2])}>{shuffledArray[2]}</button>
+                <button  onClick={() => this.handleClick(shuffledArray[2])}>{shuffledArray[2]}</button> */}
             </div>
         )
     }
