@@ -3,7 +3,7 @@ import request from 'superagent'
 export const SET_DOGSLIST = 'SET_DOGSLIST'
 export const SET_CURRENTDOG = 'SET_CURRENTDOG'
 export const TWO_RANDOMDOGS = 'TWO_RANDOMDOGS'
-
+export const CLEAN_DATA = 'CLEAN_DATA'
 
 export const setDogsList = (dogslist) => {
     return {
@@ -32,6 +32,11 @@ export const twoRandomDogs = (data) => {
     }
 }
 
+export const cleanData = () => {
+    return {
+        type: CLEAN_DATA
+    }
+}
 
 export function getDogsList(assignRandomValues = false) {
     // console.log('random image action')
